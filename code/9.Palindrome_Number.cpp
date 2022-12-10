@@ -16,27 +16,6 @@ public:
     }
 };
 
-
-/*
-class Solution {
-public:
-    bool isPalindrome(int x) {
-        int a = x;
-        long rev =0;
-        while(a>0){
-            int num = a%10;
-            rev = rev*10+num;
-            a = a/10;
-        }
-        if(rev==x){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-};
-*/
 int main(){
 
     int n, x;
