@@ -5,22 +5,33 @@ using namespace std;
 
 class Solution {
 public:
-    int removeDuplicates(vector<int> nums) {
-
-        int n = nums.size(), res = 0, i = 0, j = 1;
-        solve(nums, i, j, res);
-        res = n - res;
-        return res;
-    }
-    void solve(vector<int> nums, int i, int j, int &res){
-        if(i > nums.size() - 1) return;
-        if(nums[i] == nums[j]){
-            res++;
-            solve(nums, i, j++, res);
+    int removeDuplicates(vector<int>& nums) {
+        if(nums.size() == 0) return 0;
+        int last = nums[0];
+        int i = 1;
+        while(i < nums.size()){
+            if(nums[i] == last){
+                nums.erase(nums.begin()+i);
+            }else{
+                last = nums[i];
+                i++;
+            }
         }
-        else solve(nums, j, j++, res);
+        return nums.size();
     }
 };
+/* The judge will test your solution with the following code:
+
+int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+
+int k = removeDuplicates(nums); // Calls your implementation
+
+assert k == expectedNums.length;
+for (int i = 0; i < k; i++) {
+    assert nums[i] == expectedNums[i];
+} */
+//                      *   * *   *   *
 // ex input:  nums = [0,0,1,1,1,2,2,3,3,4]
 //     ptr            0 1 2 3 4 5 6 7 8 9
 int main(){
