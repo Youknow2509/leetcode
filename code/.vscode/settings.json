@@ -38,7 +38,10 @@
     "iosfwd": "cpp",
     "ostream": "cpp",
     "map": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "__config": "cpp",
+    "__nullptr": "cpp",
+    "iomanip": "cpp"
   },
   "code-runner.executorMap": {
 
