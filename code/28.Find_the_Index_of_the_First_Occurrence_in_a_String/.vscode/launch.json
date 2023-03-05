@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/v/code/leetcode/code/28.Find_the_Index_of_the_First_Occurrence_in_a_String",
+      "program": "/Users/v/code/leetcode/code/28.Find_the_Index_of_the_First_Occurrence_in_a_String/build/Debug/outDebug"
+    }
+  ]
+}
