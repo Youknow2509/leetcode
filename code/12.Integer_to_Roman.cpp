@@ -9,14 +9,21 @@ map<int, char> mp;
 class Solution {
 public:
     string intToRoman(int num) {
-        string res;
-// code here 
+        string ones[] = {"","I","II","III","IV","V","VI","VII","VIII","IX"};
+        string tens[] = {"","X","XX","XXX","XL","L","LX","LXX","LXXX","XC"};
+        string hrns[] = {"","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"};
+        string ths[]={"","M","MM","MMM"};
         
-        return res;
+        return ths[num/1000] + hrns[(num%1000)/100] + tens[(num%100)/10] + ones[num%10];
     }
 };
 
 int main(){
+
+    #ifndef ONLINE_JUDGE
+    freopen("Show_screen/INP.TXT", "r", stdin);
+    freopen("Show_screen/OUT.TXT", "w", stdout);
+    #endif
 
     mp.insert(pair<int, char>(1,'I'));
     mp.insert(pair<int, char>(5,'V'));
