@@ -41,31 +41,36 @@ public:
                 ans.push_back(nums[i]);
             }
             else {
-                int s = 0, e = ans.size() - 1, m;
-                while( s < e ) {
-                    m = (s + e)/2;
-                    if (nums[i] > ans[m]){
-                        e = m;
+                int l = 0, r = ans.size() - 1, m;
+                bool c = false;
+                while (l < r){
+                    m = (l + r)/2;
+                    if (ans[m] == nums[i]){
+                        c = true;
+                        break;
+                    }
+                    else if (ans[m] < nums[i]){
+                        l = m + 1;
                     }
                     else {
-                        s = m;
+                        r = m;
                     }
                 }
-                //
-                
-                //
+                if (!c){
+                    ans[l] = nums[i];
+                }
             }
         }
         return ans.size();
     }
 };
 
-class Solution {
+/* class Solution {
 public:
     int lenghtOfLIS(vector<int>& nums){
         // use class DP or class Greedy With Binary Search
     }
-};
+}; */
 
 
 
@@ -82,7 +87,7 @@ int main(){
         cin >> vt[i];
     }
 
-    DP st;
+    GreedyWithBinarySearch st;
     
     cout << st.lenghtOfLIS(vt) << endl;
 
